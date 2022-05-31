@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://playerScene.gd" type="Script" id=1]
+[ext_resource path="res://images/eatleft.png" type="Texture" id=2]
+[ext_resource path="res://images/player.png" type="Texture" id=3]
+[ext_resource path="res://images/eatright.png" type="Texture" id=4]
+[ext_resource path="res://images/right.png" type="Texture" id=5]
+[ext_resource path="res://music/media.io_funnysound.wav" type="AudioStream" id=6]
+[ext_resource path="res://music/media.io_eatsound.wav" type="AudioStream" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "right",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "left",
+"speed": 3.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+[node name="Player" type="Area2D"]
+z_index = 2
+collision_mask = 4095
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 1 )
+animation = "left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 1.6, 0.5 )
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+
+[node name="BubbleTimer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="blink_timer" type="Timer" parent="."]
+
+[node name="black_timer" type="Timer" parent="."]
+
+[node name="funny" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="eatSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+[connection signal="timeout" from="BubbleTimer" to="." method="_on_BubbleTimer_timeout"]

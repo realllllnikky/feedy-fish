@@ -1,0 +1,20 @@
+The rule is simple : 
+
+EAT or BE EATEN
+
+Start as a small fish, you will try to eat smaller fishes as fast as possible to get 
+bigger in size
+But be carefull, if bigger fishes catch you, they will eat you up ( :) )
+So you have to be safe from there and try to survive longer
+The largest fish is Shark (you can eat a shark)
+
+
+Use the arrow keys on your keyboard to move your fish
+
+Jellyfishes and crabs can hurt you and make you lose few points (-^-)
+Gems drop from above can give you energy or 'lag' mode ><
+
+If you get enough score, you win
+Else you still win, but only bone!!
+
+Good you luck !

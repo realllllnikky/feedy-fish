@@ -1,0 +1,250 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://images/startScreen.jpg" type="Texture" id=1]
+[ext_resource path="res://images/button3 (1).png" type="Texture" id=2]
+[ext_resource path="res://images/button3 (3).png" type="Texture" id=3]
+[ext_resource path="res://images/button3 (4).png" type="Texture" id=4]
+[ext_resource path="res://font/Avocado Creamy.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://motionFish.gd" type="Script" id=6]
+[ext_resource path="res://images/eatright.png" type="Texture" id=7]
+[ext_resource path="res://images/right.png" type="Texture" id=8]
+[ext_resource path="res://startScene.gd" type="Script" id=9]
+[ext_resource path="res://guildText.gd" type="Script" id=10]
+[ext_resource path="res://font/zai_PencilTypewriter.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://music/media.io_gamesound.wav" type="AudioStream" id=12]
+[ext_resource path="res://music/mousesound.wav" type="AudioStream" id=13]
+[ext_resource path="res://mouse.gd" type="Script" id=14]
+[ext_resource path="res://font/Bargain_Demo.ttf" type="DynamicFontData" id=15]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+font_data = ExtResource( 15 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 2 )
+region_rect = Rect2( 15.75, 5.25, 259.75, 191.846 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 7.25, 0, 274.5, 201 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 2 )
+region_rect = Rect2( -1.25, -3.15401, 290.25, 220.5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 3 )
+region_rect = Rect2( 8, 14.74, 176, 56 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 3 )
+region_rect = Rect2( 5, 9.863, 182, 67 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 3 )
+region_rect = Rect2( -4, 4, 200, 79 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 5.49999, 205, 82.5 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 2, 205, 89 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 4 )
+region_rect = Rect2( -4, -4, 215, 100 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="Curve2D" id=14]
+_data = {
+"points": PoolVector2Array( -65.0539, -50.9117, 65.0539, 50.9117, 169.818, 157.544, -36.7696, 0, 36.7696, 0, 249.014, 106.632, -31.1127, -28.2843, 31.1127, 28.2843, 348.009, 134.916, -25.4559, -48.0833, 25.4559, 48.0833, 435.691, 279.166, -67.8823, 25.4559, 67.8823, -25.4559, 543.171, 327.25, -48.0833, -36.7696, 48.0833, 36.7696, 673.279, 355.534, 0, 0, 0, 0, 746.818, 307.451, -39.598, 11.3137, 39.598, -11.3137, 828.843, 245.225, -62.2255, -22.6274, 62.2255, 22.6274, 941.98, 262.196, -76.3676, -56.5686, 76.3676, 56.5686, 1043.8, 406.446, 0, 0, 0, 0, 1043.8, 590.294, 0, 0, 0, 0, 947.637, 661.005, 0, 0, 0, 0, -22.5149, 672.318, 0, 0, 0, 0, -56.4561, 333.28, 25.4559, 67.8823, -25.4559, -67.8823, 93.4507, 216.941, -73.5392, -19.799, 73.5392, 19.799, 169.818, 157.544 )
+}
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "swim",
+"speed": 5.0
+} ]
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.960784, 0.835294, 0.964706, 0.764706 )
+border_color = Color( 0.564706, 0.14902, 0.639216, 0.698039 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.835294, 0.176471, 0.921569, 0.745098 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.929412, 0.337255, 0.933333, 0.611765 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.929412, 0.337255, 0.933333, 0.611765 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 26
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 17
+font_data = ExtResource( 11 )
+
+[node name="Node" type="Node"]
+script = ExtResource( 9 )
+
+[node name="backgound" type="Sprite" parent="."]
+position = Vector2( 526, 331 )
+scale = Vector2( 1.1, 0.83 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 282.0
+margin_top = 135.0
+margin_right = 736.0
+margin_bottom = 255.0
+custom_fonts/font = SubResource( 1 )
+text = "FeedyFish"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -16.0
+margin_right = 126.0
+margin_bottom = 94.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.560784, 0.0156863, 0.34902, 1 )
+custom_colors/font_color_pressed = Color( 0.443137, 0.0117647, 0.27451, 1 )
+text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Guild" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = 79.0
+margin_right = 126.0
+margin_bottom = 179.0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.560784, 0.0156863, 0.34902, 1 )
+custom_colors/font_color_pressed = Color( 0.443137, 0.0117647, 0.27451, 1 )
+text = "GUILD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -126.0
+margin_top = -135.0
+margin_right = 125.0
+margin_bottom = -43.0
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.560784, 0.0156863, 0.34902, 1 )
+custom_colors/font_color_pressed = Color( 0.443137, 0.0117647, 0.27451, 1 )
+text = "QUIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="motionFish" type="Path2D" parent="."]
+curve = SubResource( 14 )
+script = ExtResource( 6 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="motionFish"]
+position = Vector2( 169.818, 157.544 )
+rotate = false
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="motionFish/PathFollow2D"]
+scale = Vector2( 0.12, 0.12 )
+frames = SubResource( 15 )
+animation = "swim"
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+margin_left = 40.0
+margin_top = 30.0
+margin_right = 990.0
+margin_bottom = 580.0
+custom_styles/panel = SubResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="skip" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = 190.0
+margin_right = 50.0
+margin_bottom = 230.0
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/normal = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
+custom_colors/font_color = Color( 0.45098, 0.0156863, 0.168627, 1 )
+text = "SKIP"
+
+[node name="guildText" type="Label" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 50.0
+margin_bottom = 69.0
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 0.207843, 0.0117647, 0.305882, 1 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gamesound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="mouse" type="Node2D" parent="."]
+script = ExtResource( 14 )
+
+[node name="mouse" type="AudioStreamPlayer2D" parent="mouse"]
+stream = ExtResource( 13 )
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Guild" to="." method="_on_Guild_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Panel/skip" to="." method="_on_skip_pressed"]

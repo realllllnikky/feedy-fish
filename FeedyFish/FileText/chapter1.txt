@@ -1,0 +1,17 @@
+	CHAPTER 1: Sandy Shoal
+	Time to get your fins wet!
+
+	Meet Buro the Clownfish. Buro lives in the warm waters of the Sandy 
+	Shoal - a beautiful area off the Olso Coast. Enjoy the sights, but 
+	don't get too comfortable... A fish still needs his lunch, and it's 
+	a fish-eat-fish world out there! 
+
+
+	How to play:
+    	- Use your up, down, left, right arrow keys.
+    	- Eat fish that are smaller than you.
+    	- Avoid anything that's larger than you.
+    	- Eat enough fish and you'll grow bigger!
+
+
+	Okay, let's go!!

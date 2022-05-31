@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://images/flv3r1.png" type="Texture" id=1]
+[ext_resource path="res://images/flv3r2.png" type="Texture" id=2]
+[ext_resource path="res://images/flv3l2.png" type="Texture" id=3]
+[ext_resource path="res://images/flv3l1.png" type="Texture" id=4]
+[ext_resource path="res://fishLevel3.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "right",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+[node name="fishLevel3" type="Area2D"]
+z_index = 1
+collision_layer = 128
+script = ExtResource( 5 )
+
+[node name="AnimSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.1, 1.1 )
+frames = SubResource( 1 )
+animation = "right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 10, 0 )
+scale = Vector2( 4, 0.8 )
+shape = SubResource( 2 )
+[connection signal="area_entered" from="." to="." method="_on_fishLevel3_area_entered"]
